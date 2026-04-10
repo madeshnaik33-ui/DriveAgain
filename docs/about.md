@@ -13,7 +13,7 @@ The project is divided into three distinct applications that communicate with ea
 ## 🛠️ The Technical Stack
 Designed to be incredibly fast, highly secure, and 100% free to host during the launch phase.
 
-*   **Frontend (The Face):** Next.js (React) + Tailwind CSS. Styled with a minimal-elastic design system using Sora/Inter typography and a distinct brick orange, black, and dark sky blue color palette.
+*   **Frontend (The Face):** Next.js + Tailwind CSS. Styled with a minimal-elastic design system using Sora/Inter typography and a distinct brick orange, black, and dark sky blue color palette.
 *   **Backend API (The Brain):** Python (FastAPI or Django) to handle complex algorithms, database queries, and secure user authentication.
 *   **Database (The Memory):** PostgreSQL (hosted on Neon.tech). Chosen to handle complex geographic searches (e.g., "Find cars within 15 km of me").
 *   **Image Storage (The Vault):** Cloudflare R2. A dedicated bucket for high-resolution car photos and PDF documents.
@@ -26,7 +26,7 @@ Designed to be incredibly fast, highly secure, and 100% free to host during the 
 A 5-person agile engineering team structured as follows:
 
 *   **Frontend 1:** Focuses on the public Buyer Website and global CSS system.
-*   **Frontend 2:** Focuses on the complex React forms and Seller/Admin Dashboards.
+*   **Frontend 2:** Focuses on complex dashboard forms and Seller/Admin Dashboards.
 *   **Backend 1:** Focuses on database architecture, repository management, security, and code reviews.
 *   **Backend 2:** Focuses on the core vehicle API, data creation, and Cloudflare image routing.
 *   **Backend 3:** Focuses on Admin logic, verification algorithms, and geographic search filters.
