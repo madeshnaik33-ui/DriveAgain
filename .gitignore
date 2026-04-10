@@ -6,7 +6,11 @@ frontend/.env.local
 frontend/.env
 
 # --- Backend (Python) ---
+.venv/
 backend/venv/
+backend/.venv/
+**/__pycache__/
+*.py[cod]
 backend/__pycache__/
 backend/*.pyc
 backend/.env
