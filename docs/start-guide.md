@@ -9,37 +9,39 @@ Install these tools before cloning:
 - Git (latest stable)
 - Node.js 20.9+ (LTS recommended)
 - npm (comes with Node.js)
+- Python 3.11+
 - VS Code
 
 Check versions:
 
-```bash
+```powershell
 git --version
 node -v
 npm -v
+python --version
 ```
 
 ## 2. Clone the Repository
 
 Run these commands in your terminal:
 
-```bash
+```powershell
 git clone https://github.com/dhanushrs1/DriveAgain.git
 cd DriveAgain
 ```
 
 If you already cloned an older remote URL, update origin:
 
-```bash
+```powershell
 git remote set-url origin https://github.com/dhanushrs1/DriveAgain.git
 git remote -v
 ```
 
 ## 3. Switch to the Team Branch
 
-Never work directly on `main`.
+Never work directly on main.
 
-```bash
+```powershell
 git fetch --all --prune
 git checkout develop
 git pull origin develop
@@ -47,59 +49,76 @@ git pull origin develop
 
 ## 4. Open the Project
 
-```bash
+```powershell
 code .
 ```
 
-## 5. Install Frontend Dependencies
+## 5. Install Frontend + Backend Dependencies
 
-From the repository root:
+Recommended setup command (run once from repository root):
 
-```bash
-cd frontend
+```powershell
+powershell -ExecutionPolicy Bypass -File .\scripts\setup.ps1
+```
+
+Manual setup (alternative):
+
+```powershell
+cd backend
+python -m venv venv
+.\venv\Scripts\python.exe -m pip install -r requirements.txt
+
+cd ..\frontend
 npm install
 ```
 
-## 6. Start the Website (Frontend)
+## 6. Start Frontend + Backend Together
 
-```bash
-npm run dev
+From the repository root:
+
+```powershell
+powershell -ExecutionPolicy Bypass -File .\scripts\dev.ps1
 ```
 
-Open this in your browser:
+This opens two terminals automatically.
 
-- http://localhost:3000
+- Frontend: http://localhost:3000
+- Backend: http://localhost:8000
+- Backend docs: http://localhost:8000/docs
 
-If port 3000 is busy, Next.js will automatically use another port (for example, 3001).
+If port 3000 is already in use, Next.js will use the next available port.
 
 ## 7. Current Routes You Can Test
 
-- Buyer site: http://localhost:3000/
+- Buyer website: http://localhost:3000/
 - Seller portal: http://localhost:3000/seller
 - Admin dashboard: http://localhost:3000/admin
+- Buyer API: http://localhost:8000/api/buyer/ping
+- Seller API: http://localhost:8000/api/seller/ping
+- Admin API: http://localhost:8000/api/admin/ping
 
-## 8. Stop the Server
+## 8. Stop the Servers
 
-Press `Ctrl+C` in the terminal running `npm run dev`.
+Close the two spawned terminals, or press Ctrl+C inside each server terminal.
 
 ## 9. Daily Team Workflow (Required)
 
 At the start of each day:
 
-```bash
+```powershell
 git checkout develop
 git pull origin develop
 ```
 
 Create a feature branch:
 
-```bash
+```powershell
 git checkout -b feature/your-feature-name
 ```
 
 After coding:
 
-```bash
+```powershell
 git add .
 git commit -m "feat: short clear message"
 git push -u origin feature/your-feature-name
@@ -107,35 +126,46 @@ git push -u origin feature/your-feature-name
 
 Then open a Pull Request:
 
-- Base branch: `develop`
-- Compare branch: `feature/your-feature-name`
+- Base branch: develop
+- Compare branch: feature/your-feature-name
 
 ## 10. Rules Everyone Must Follow
 
-- Do not push directly to `main`.
-- Create a feature branch from `develop`.
+- Do not push directly to main.
+- Create a feature branch from develop.
 - Keep commits small and clear.
 - Open PRs for review before merge.
 
 ## 11. Common Problems and Fixes
 
-### Error: Missing script "dev"
+### Error: missing script dev
 
 You are likely in the wrong folder. Run:
 
-```bash
+```powershell
 cd frontend
 npm run dev
 ```
 
+### Python command not found
+
+Install Python 3.11+ and restart terminal.
+
 ### Port already in use
 
-Next.js will choose the next free port automatically. Use the URL shown in terminal.
+Use the URL shown in terminal output.
 
 ### Hydration warning in dev
 
-This can be caused by browser extensions. Test once in private/incognito mode.
+This is often caused by browser extensions. Test once in private/incognito mode.
 
 ## 12. Backend Status
 
-Backend API setup is planned next. For now, team members only need to run the frontend.
+Backend API starter is ready with buyer, seller, and admin modules.
+
+## 13. Deployment Targets (Later)
+
+- Frontend hosting: Vercel
+- Backend hosting: Koyeb
+- Database: Neon PostgreSQL
+- Image/file storage: Cloudflare R2

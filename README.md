@@ -8,8 +8,8 @@ This repository is structured as a **Monorepo**, containing both the Next.js pub
 
 ## 🏗️ Architecture & Tech Stack
 
-* **Frontend:** Next.js (React), Custom CSS Variables, Tailwind CSS
-* **Backend:** Python (FastAPI/Django)
+* **Frontend:** Next.js + Tailwind CSS
+* **Backend:** Python (FastAPI)
 * **Database:** PostgreSQL (Neon.tech)
 * **Media Storage:** Cloudflare R2
 * **Hosting:** Vercel (Frontend) & Koyeb (Backend)
@@ -20,8 +20,9 @@ This repository is structured as a **Monorepo**, containing both the Next.js pub
 
 ```text
 DriveAgain/
-├── frontend/               # The Next.js UI (Buyer Site & Seller Dashboard)
-├── backend/                # The Python API & Core Logic
+├── frontend/               # Next.js UI (Buyer, Seller, Admin portals)
+├── backend/                # FastAPI backend (buyer/seller/admin APIs)
+├── scripts/                # Local setup/start helpers
 ├── README.md               # You are here
 └── .gitignore              # Global git ignore rules
 ```
