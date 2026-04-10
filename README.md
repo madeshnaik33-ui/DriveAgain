@@ -24,3 +24,12 @@ DriveAgain/
 ├── backend/                # The Python API & Core Logic
 ├── README.md               # You are here
 └── .gitignore              # Global git ignore rules
+```
+
+---
+
+## Team Onboarding
+
+For step-by-step clone, setup, and run instructions, read:
+
+- [docs/start-guide.md](docs/start-guide.md)

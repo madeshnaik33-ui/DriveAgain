@@ -27,6 +27,6 @@ A 5-person agile engineering team structured as follows:
 
 *   **Frontend 1:** Focuses on the public Buyer Website and global CSS system.
 *   **Frontend 2:** Focuses on the complex React forms and Seller/Admin Dashboards.
-*   **Backend Lead (You):** Focuses on database architecture, repository management, security, and code reviews.
+*   **Backend 1:** Focuses on database architecture, repository management, security, and code reviews.
 *   **Backend 2:** Focuses on the core vehicle API, data creation, and Cloudflare image routing.
 *   **Backend 3:** Focuses on Admin logic, verification algorithms, and geographic search filters.
